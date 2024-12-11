@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 
 import { images } from '../../constants';
 import './Header.scss';
+import Appwrap from '../../wrapper/Appwrap';
 
 const scaleVariants = {
   whileInView: {
@@ -17,7 +18,7 @@ const scaleVariants = {
 
 const Header = () => {
   return (
-    <div id='home' className="app__header app__flex">
+    <div className="app__header app__flex">
       <motion.div
         className="app__header-info"
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
@@ -27,7 +28,7 @@ const Header = () => {
           <div className="badge-cmp app__flex">
             <span>👋</span>
             <div style={{ marginLeft: 20 }}></div>
-            <p className="p-text">Hello, I am</p>
+            <p className="p-text" style={{ marginRight: 5 }}>Hello, I am</p>
             <h1 className="head-text">Zafron</h1>
           </div>
 
@@ -67,4 +68,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Appwrap(Header, 'home');
