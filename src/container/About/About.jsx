@@ -18,8 +18,8 @@ const About = () => {
   return (
     <>
       <h2 className="head-text">
-        I know that a <span>Good App</span>
-        <br /> makes a <span>Good Business</span>
+        I know that <span>Good Apps</span>
+        <br /> means <span>Good Business</span>
       </h2>
 
       <div className="app__profiles">
