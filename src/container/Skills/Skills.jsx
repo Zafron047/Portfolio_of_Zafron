@@ -26,7 +26,7 @@ const Skills = () => {
     <>
       <h2 className="head-text">Skills & Experience</h2>
       <div className="app__skills-container">
-        <motion.dv className="app__skills-list">
+        <motion.div className="app__skills-list">
           {skills?.map((skill) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
@@ -43,12 +43,11 @@ const Skills = () => {
               <p className="p-text">{skill.name}</p>
             </motion.div>
           ))}
-        </motion.dv>
+        </motion.div>
         <motion.div className="app__skills-exp">
           {experiences?.map((experience) => (
             <motion.div className="app__skills-exp-item" key={experience.name}>
               <div className="app__skills-exp-year">
-                {console.log('This is experience: ', { experience })}
                 <p className="bold-text">{experience.year}</p>
               </div>
               <motion.div className="app__skills-exp-works">
