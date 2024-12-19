@@ -5,6 +5,7 @@ import { Tooltip } from 'react-tooltip';
 import { urlFor, client } from '../../client';
 import './Skills.scss';
 import Appwrap from '../../wrapper/Appwrap';
+import { MotionWrap } from '../../wrapper';
 
 const Skills = () => {
   const [skills, setSkills] = useState([]);
@@ -71,7 +72,7 @@ const Skills = () => {
                       place="left"
                       effect="solid"
                       arrowColor="#000"
-                      className='skills-tooltip'
+                      className="skills-tooltip"
                     >
                       {work.desc}
                     </Tooltip>
@@ -86,4 +87,8 @@ const Skills = () => {
   );
 };
 
-export default Appwrap(Skills, 'skills');
+export default Appwrap(
+  MotionWrap(Skills, 'app__skills'),
+  'skills',
+  'app__whitebg'
+);

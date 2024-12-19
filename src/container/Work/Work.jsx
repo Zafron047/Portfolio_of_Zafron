@@ -6,6 +6,7 @@ import Appwrap from '../../wrapper/Appwrap';
 import { urlFor, client } from '../../client';
 
 import './Work.scss';
+import { MotionWrap } from '../../wrapper';
 
 const Work = () => {
   const handleWorkFilter = (item) => {
@@ -113,4 +114,4 @@ const Work = () => {
   );
 };
 
-export default Appwrap(Work, 'work');
+export default Appwrap(MotionWrap(Work, 'app__works'), 'work', 'app__primarybg');
