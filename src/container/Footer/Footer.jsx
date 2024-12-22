@@ -67,7 +67,7 @@ const Footer = () => {
 
       setIsFormSubmitted(true);
       setSubmissionMessage(
-        "Thank you for reaching out! <br />I'll get back to you soon. <br />For quicker responses, feel free to connect on WhatsApp ⬆️"
+        "Thank you for reaching out! <br />I'll get back to you soon. <br />For quicker responses, feel free to connect on WhatsApp"
       );
 
       setTimeout(() => resetForm(), 5000);
