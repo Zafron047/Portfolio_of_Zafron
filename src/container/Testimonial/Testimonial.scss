@@ -73,7 +73,7 @@
 }
 
 .app__testimonials-btns {
-  flex-direction: row;
+  flex-direction: row !important;
   margin-top: 1rem;
 
   div {
