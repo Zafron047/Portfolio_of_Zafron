@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 
 import { images } from '../../constants';
 import { Appwrap, MotionWrap } from '../../wrapper';
-import { client } from '../../client';
 
 import './Footer.scss';
 
@@ -46,35 +46,37 @@ const Footer = () => {
     setIsFormSubmitted(false);
   };
 
-  const submitContact = async (contact) => {
-    try {
-      await client.create(contact);
-      setIsFormSubmitted(true);
-      setSubmissionMessage(
-        'Thank you for getting in touch!'
-      );
-
-      setTimeout(() => resetForm(), 5000);
-    } catch (err) {
-      setSubmissionMessage('Oops something went wrong. Please try again.');
-    }
-  };
-
   const handleSubmit = async () => {
     if (!validateForm()) return;
 
     setLoading(true);
 
-    const contact = {
-      _type: 'contact',
-      name,
-      email,
-      message,
+    const serviceID = 'service_6vob5vs';
+    const templateID = 'template_zhj5esc';
+    const publicKey = 'yjOezwjD04N5EUiIf';
+
+    const templateParams = {
+      to_name: 'Zafron',
+      from_name: name,
+      from_email: email,
+      message: message,
     };
 
-    await submitContact(contact);
+    try {
+      await emailjs.send(serviceID, templateID, templateParams, publicKey);
 
-    setLoading(false);
+      setIsFormSubmitted(true);
+      setSubmissionMessage(
+        "Thank you for reaching out! <br />I'll get back to you soon. <br />For quicker responses, feel free to connect on WhatsApp ⬆️"
+      );
+
+      setTimeout(() => resetForm(), 5000);
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setSubmissionMessage('Oops, something went wrong. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -135,13 +137,14 @@ const Footer = () => {
           >
             {loading ? 'Sending...' : 'Send'}
           </button>
-          {submissionMessage && (
-            <p className="submission-message">{submissionMessage}</p>
-          )}
+          {submissionMessage && <p className="p-text">{submissionMessage}</p>}
         </div>
       ) : (
         <div>
-          <h3 className="head-text">{submissionMessage}</h3>
+          <p
+            className="p-text" style={{ textAlign: 'center' }}
+            dangerouslySetInnerHTML={{ __html: submissionMessage }}
+          />
         </div>
       )}
     </>
