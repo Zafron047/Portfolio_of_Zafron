@@ -37,10 +37,10 @@ const SocialMedia = () => {
       </div>
       <div>
         <a
-          href="https://wa.me/qr/3WRWSBTU62QKO1"
+          href="https://wa.me/message/UJM4J2WFOOE4D1"
           target="_blank"
           alt="whatsapp"
-          title="whatsapp: +880 167-059 49 97"
+          title="whatsapp: +88017 444 59 069"
         >
           <BsWhatsapp />
         </a>
