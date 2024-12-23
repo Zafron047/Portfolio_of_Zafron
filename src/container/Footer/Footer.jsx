@@ -143,7 +143,7 @@ const Footer = () => {
           >
             {loading ? 'Sending...' : 'Send'}
           </button>
-          {submissionMessage && <p className="p-text">{submissionMessage}</p>}
+          {submissionMessage && <p className="p-text" >{submissionMessage}</p>}
         </div>
       ) : (
         <div>
