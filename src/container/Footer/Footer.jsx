@@ -51,9 +51,9 @@ const Footer = () => {
 
     setLoading(true);
 
-    const serviceID = 'service_6vob5vs';
-    const templateID = 'template_zhj5esc';
-    const publicKey = 'yjOezwjD04N5EUiIf';
+    const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+    const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
     const templateParams = {
       to_name: 'Zafron',
