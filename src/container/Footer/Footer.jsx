@@ -84,16 +84,22 @@ const Footer = () => {
       <h2 className="head-text">Take a Coffee and chat with me.</h2>
 
       <div className="app__footer-cards">
-        <div className="app__footer-card">
+        <div
+          onClick={() => (window.location.href = 'mailto:nohcodein@gmail.com')}
+          className="app__footer-card"
+        >
           <img src={images.email} alt="email" />
           <a href="mailto:nohcodein@gmail.com" className="p-text">
             nohcodein@gmail.com
           </a>
         </div>
-        <div className="app__footer-card">
+        <div
+          className="app__footer-card"
+          onClick={() => (window.location.href = 'tel:+8801744459069')}
+        >
           <img src={images.mobile} alt="mobile" />
-          <a href="tel: +880 (167) 059 49 97" className="p-text">
-            +880 (167) 059 49 97
+          <a href="tel: +880 (17) 444 59 069" className="p-text">
+            +880 (17) 444 59 069
           </a>
         </div>
       </div>
@@ -142,7 +148,8 @@ const Footer = () => {
       ) : (
         <div>
           <p
-            className="p-text" style={{ textAlign: 'center' }}
+            className="p-text"
+            style={{ textAlign: 'center' }}
             dangerouslySetInnerHTML={{ __html: submissionMessage }}
           />
         </div>
